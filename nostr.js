@@ -1,3 +1,6 @@
+// generate Nostr private key & public key from mnemonic
+// compatible with Alby Wallet extension
+
 
 import { nip19, getPublicKey } from 'nostr-tools'
 import bip39 from 'bip39'
