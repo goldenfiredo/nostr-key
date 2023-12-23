@@ -12,7 +12,7 @@ async function inscribe(count) {
     const client = await SigningStargateClient.connectWithSigner(rpcEndpoint, wallet)
     
     const from = account.address
-    const to_ = from
+    const to = from
     const amount = coins(1, "utia")
     const fee = {
         amount: coins(2000, "utia"),
@@ -22,7 +22,7 @@ async function inscribe(count) {
     const memo = 'ZGF0YToseyJvcCI6Im1pbnQiLCJhbXQiOjEwMDAwLCJ0aWNrIjoiY2lhcyIsInAiOiJjaWEtMjAifQ=='
 
     for (let i = 0; i < count; i++) {
-        const tx = await client.sendTokens(from, to_, amount, fee, memo)
+        const tx = await client.sendTokens(from, to, amount, fee, memo)
         console.log(`${i}, hash: https://www.mintscan.io/celestia/tx/${tx.transactionHash}`)
     }
 }
